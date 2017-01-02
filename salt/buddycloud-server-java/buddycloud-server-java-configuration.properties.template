@@ -17,31 +17,33 @@ jdbc.proxool.house-keeping-test-sql=select CURRENT_DATE
 
 # Admin users are sent all notiifcations as well as having access 
 # to all posts from the /firehose node (not just from open channels)
-# users.admin = pusher.example.com;archive-service@example.com;crawler@searchengine.org
-# user.admin=pusher.{{ salt['pillar.get']('buddycloud:lookup:domain') }};buddycloud-crawler@buddycloud.org
+users.admin = pusher.example.com;archive-service@example.com;crawler@searchengine.org
+user.admin=pusher.{{ salt['pillar.get']('buddycloud:lookup:domain') }};buddycloud-crawler@buddycloud.org
 
 # A list of channels (local or remote) to which to subscribe new users
 # Note that the channels will not be created - they must already exist
 # channels.autosubscribe={{ salt['pillar.get']('buddycloud:lookup:channels.autosubscribe') }}
+channels.autosubscribe=channels.{{ salt['pillar.get']('buddycloud:lookup:domain') }};topics.{{ salt['pillar.get']('buddycloud:lookup:domain') }}
 
 # If any of the 'channels.autosubscribe' channels are private local channels,
 # then whether to automatically approve the user.
 # NOTE: This will only work on local private channels
-# channels.autosubscribe.autoapprove=true
+channels.autosubscribe.autoapprove=true
 
 # Channel configuration related to access model and affiliation
 
-# channel.configuration.default.accessmodel=open
-# channel.configuration.default.affiliation=member
+channel.configuration.default.accessmodel=open
+channel.configuration.default.affiliation=member
 
 # Overrides for default configuration
-# channel.configuration.posts.affiliation=publisher
+channel.configuration.posts.affiliation=publisher
 
-# channel.configuration.geo.next.accessmodel=authorize
-# channel.configuration.geo.current.accessmodel=authorize
-# channel.configuration.geo.previous.accessmodel=authorize
+channel.configuration.geo.next.accessmodel=authorize
+channel.configuration.geo.current.accessmodel=authorize
+channel.configuration.geo.previous.accessmodel=authorize
 
-# channel.configuration.default.title=%jid%
-# channel.configuration.default.description=%jid%
+channel.configuration.default.title=%jid%
+channel.configuration.default.description=%jid%
 
 # notifiactions.connected: {{ salt['pillar.get']('buddycloud:lookup:notifications.connected') }}
+notifiactions.connected: pusher.{{ salt['pillar.get']('buddycloud:lookup:domain') }}
