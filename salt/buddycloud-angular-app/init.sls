@@ -19,7 +19,7 @@ buddycloud-angular-app-npm-packages:
 
 buddycloud-angular-app-git-checkout:
   git.latest:
-    - name: https://github.com/buddycloud/buddycloud-angular-app.git
+    - name: https://github.com/tsaserv/buddycloud-angular-app.git
     - rev: master
     - target: /opt/buddycloud-angular-app
     - force_reset: true
