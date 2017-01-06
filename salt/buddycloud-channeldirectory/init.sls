@@ -7,7 +7,7 @@ install-buddyclould-channeldirectory-dependencies:
 
 buddycloud-channeldirectory-git-checkout:
   git.latest:
-    - name: https://github.com/buddycloud/buddycloud-channeldirectory.git
+    - name: https://github.com/tsaserv/channel-directory.git
     - rev: {{ salt['pillar.get']('buddycloud:lookup:git-branch') }}
     - target: /opt/buddycloud-channeldirectory
     - force_reset: true

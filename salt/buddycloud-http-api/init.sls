@@ -14,7 +14,7 @@ install-buddyclould-http-api-dependencies:
 
 buddycloud-http-api-git-checkout:
   git.latest:
-    - name: https://github.com/buddycloud/buddycloud-http-api.git
+    - name: https://github.com/tsaserv/buddycloud-http-api.git
     - rev: {{ salt['pillar.get']('buddycloud:lookup:git-branch') }}
     - target: /opt/buddycloud-http-api
     - force_reset: true
