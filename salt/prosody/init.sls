@@ -2,19 +2,20 @@
 # Prosody - jabber server
 #
 
-#prosody-repo:
-#  pkgrepo.managed:
-#   - name: deb http://packages.prosody.im/debian trusty main
-#   - key_url: http://packages.prosody.im/debian/pubkey.asc
-#   - require_in:
-#     - pkg: prosody
+prosody-repo:
+  pkgrepo.managed:
+   - name: deb http://packages.prosody.im/debian trusty main
+   - key_url: http://packages.prosody.im/debian/pubkey.asc
+   - require_in:
+     - pkg: prosody
 
 prosody-packages:
   pkg.installed:
     - pkgs:
       - prosody
-#    - require:
-#      - pkgrepo: prosody-repo
+      - lua-dbi-postgresql
+    - require:
+        - pkgrepo: prosody-repo
 
 /etc/prosody/modules:
   file.recurse:
