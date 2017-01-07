@@ -19,6 +19,7 @@ modules_disabled = {
     "version";              -- Replies to server version requests
 }
 
+component_ports        = 5347
 c2s_require_encryption = false
 {% if salt['pillar.get']('buddycloud:lookup:use_tls', False) -%}s2s_require_encryption = true{% endif -%};
 s2s_secure_auth        = false
