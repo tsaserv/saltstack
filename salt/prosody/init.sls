@@ -12,7 +12,7 @@
 prosody-packages:
   pkg.installed:
     - pkgs:
-      - prosody-0.90
+      - prosody
 #    - require:
 #      - pkgrepo: prosody-repo
 
